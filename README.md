@@ -17,23 +17,7 @@ Prints suggestions if password is weak
 Logs password & result to a file
 Modular code with separate .c and .h files
 
-Project Structure
-Final_Project/
-│
-├── main.c
-│
-├── input_handler.c
-├── input_handler.h
-│
-├── password_checker.c
-├── password_checker.h
-│
-├── file_logger.c
-├── file_logger.h
-│
-└── password_log.txt
-
-👥 Group Member Contribution
+Group Member Contribution
 Member	Module	Files
 Deepak Sharma-Input Handling(input_handler.c, input_handler.h)
 Kshitij Mishra-Password Checking Logic(password_checker.c, password_checker.h)
