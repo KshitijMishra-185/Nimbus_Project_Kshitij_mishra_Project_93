@@ -17,8 +17,7 @@ Prints suggestions if password is weak
 Logs password & result to a file
 Modular code with separate .c and .h files
 
-Group Member Contribution
-Member	Module	Files
+Group Member Contribution-
 Deepak Sharma-Input Handling(input_handler.c, input_handler.h)
 Kshitij Mishra-Password Checking Logic(password_checker.c, password_checker.h)
 Pravar Singh-(File Logging	file_logger.c, file_logger.h)
@@ -30,12 +29,13 @@ gcc main.c input_handler.c password_checker.c file_logger.c -o password_checker
 If successful, it creates:
 password_checker.exe
 
-How to Run (Windows)
+How to Run (Windows)-
 In the same folder:
 ./password_checker.exe
 
 
-How the Program Works
+How the Program Works-
+
  1.Password Input
 User enters a password — handled by readPassword().
 
