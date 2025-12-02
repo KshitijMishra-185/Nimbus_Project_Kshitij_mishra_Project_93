@@ -1,69 +1,128 @@
 # Nimbus_Project_Kshitij_mishra_Project_93
 
-Password Strength Checker
-This project is a modular C program that checks whether a password is strong or weak.
-It also gives helpful suggestions for improving weak passwords and logs the results into a file.
-This project is divided among 4 group members, each handling a separate module to show equal contribution.
+# Password Strength Checker – C Project
 
-Features-
-Reads password input from the user
-Checks for:
-Minimum length (8 characters)
-Uppercase letters
-Lowercase letters
-Numbers
-Special characters
-Prints suggestions if password is weak
-Logs password & result to a file
-Modular code with separate .c and .h files
+A modular C program that evaluates the strength of a user-entered password.
+The program checks if the password contains uppercase letters, lowercase letters, numbers, special symbols, and meets the minimum length requirement.
+If the password is weak, the program shows suggestions for improvement and logs the result to a file.
 
-Group Member Contribution-
-Deepak Sharma-Input Handling(input_handler.c, input_handler.h)
-Kshitij Mishra-Password Checking Logic(password_checker.c, password_checker.h)
-Pravar Singh-(File Logging	file_logger.c, file_logger.h)
-Yash-Main Program Flow and debugging(main.c)
+## **Project Objective**
 
-How to Compile-
-Open terminal inside the Final_Project folder and run:
+The main objective of this project is to **develop a password validation system in C that:
+
+ Accepts a password from the user
+ Checks its strength based on multiple security criteria
+ Displays appropriate feedback and suggestions
+ Stores the result (STRONG/WEAK) in a log file
+ Demonstrates modular programming using multiple source (.c) and header (.h) files
+
+This project helps students understand:
+ Modular code structure
+ File handling in C
+ String processing
+ Condition-based validation
+ Working with multiple ".c" files in one program
+ 
+## Development Steps
+
+### **Step 1: Input Module**
+
+* Created "input_handler.c" & "input_handler.h"
+* Implemented "readPassword()"
+* Ensures user input is safely collected using dynamic memory and "fgets()"
+
+---
+
+### **Step 2: Password Checking Module**
+
+* Created `password_checker.c` & `password_checker.h`
+* Implemented `checkPassword()`
+* Checks for:
+
+  * Minimum length ≥ 8
+  * At least one uppercase
+  * At least one lowercase
+  * At least one digit
+  * At least one special character
+* Generates suggestions for missing criteria
+
+### **Step 3: File Logging Module**
+
+* Created `file_logger.c` & `file_logger.h`
+* Implemented `saveToFile()`
+* Stores password and strength status in `password_log.txt`
+
+---
+
+### **Step 4: Main Program**
+
+* Created `main.c`
+* Integrates all modules
+* Displays final output to the user
+* Frees allocated memory
+
+### **Step 5: Final Compilation**
+Compiled all four `.c` files using GCC:
 gcc main.c input_handler.c password_checker.c file_logger.c -o password_checker
-If successful, it creates:
+
+
+## **Usage Instructions**
+
+### **1. Compilation**
+
+Open terminal inside project folder and run:
+
+gcc main.c input_handler.c password_checker.c file_logger.c -o password_checker
+
+### **2. Run the Program**
+
 password_checker.exe
 
-How to Run (Windows)-
-In the same folder:
-./password_checker.exe
+## **Sample Output Screenshots**
+<img width="1595" height="887" alt="image" src="https://github.com/user-attachments/assets/385a6ece-b26a-46b0-87ce-96757c973c70" />
 
 
-How the Program Works-
+### **Strong Password Example**
 
- 1.Password Input
-User enters a password — handled by readPassword().
-
-2.Password Checking
-Checks:
-Length ≥ 8
-Has uppercase
-Has lowercase
-Contains a digit
-Contains a special character
-If any condition is missing, suggestions are printed.
-
-3.Logging
-The password and its result (STRONG/WEAK) are saved in password_log.txt.
-
-Example Output
-For strong password:
+```
 Enter password: Hello@123
 The password is STRONG
+```
 
-For weak password:
+---
+
+### **Weak Password Example**
+
+```
 Enter password: hello
 The password is WEAK
+
 Suggestions:
 - Add uppercase letters
 - Add numbers
 - Add special characters
 - Increase length to at least 8 characters
+```
 
-License
-This project is for educational and academic use.
+---
+
+## **Group Member Contribution**
+
+| Member   | Responsibility             | Files                                   |
+| -------- | -------------------------- | --------------------------------------- |
+| Deepak Sharma | Input Handling             | input_handler.c / input_handler.h       |
+| Kshitij Mishra | Password Checking Logic    | password_checker.c / password_checker.h |
+| Pravar Singh | File Logging               | file_logger.c / file_logger.h           |
+| Yash | Main Program & Integration | main.c                                  |
+
+---
+
+##  **Conclusion**
+
+This project successfully demonstrates the concepts of:
+
+* Modular programming
+* String manipulation
+* Condition checking
+* File I/O operations
+* Multi-file compilation
