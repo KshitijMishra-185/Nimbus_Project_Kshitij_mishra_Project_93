@@ -1,27 +1,26 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "input_handler.h"
 #include "password_checker.h"
 #include "file_logger.h"
 
 int main() {
+    char *pass = readPassword();
 
-    char password[100];
-
-    // Step 1: Read password from the user
-    readPassword(password);
-
-    // Step 2: Check password strength
-    int isStrong = checkPasswordStrength(password);
-
-    // Step 3: Display result and log it
-    if (isStrong) {
-        printf("The password is STRONG\n");
-        logPasswordResult(password, "STRONG");
-    } else {
-        printf("The password is WEAK\n");
-        printSuggestions(password);
-        logPasswordResult(password, "WEAK");
+    if (pass == NULL) {
+        printf("Error reading password.\n");
+        return 0;
     }
 
+    int strong = checkPassword(pass);
+
+    if (strong == 1)
+        printf("The password is STRONG\n");
+    else
+        printf("The password is WEAK\n");
+
+    saveToFile(pass, strong);
+
+    free(pass);
     return 0;
 }
